@@ -1,6 +1,6 @@
 # markdownify
 
-Turn plain content in markdown. Insert in one of the files /src.
+Turn plain content in markdown. Insert in one of the files in /src.
 
 
 ## Copyright and License
