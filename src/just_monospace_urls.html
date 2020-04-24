@@ -1,0 +1,28 @@
+<pre id="content">
+  
+- https://wiki.python.org/moin/BeginnersGuide
+  - https://wiki.python.org/moin/BeginnersGuide/Examples
+- https://www.python.org/doc
+  - https://docs.python.org/3/tutorial/index.html
+  - https://docs.python.org/3
+  - https://docs.python.org/3/reference
+  - https://docs.python.org/3/library
+  - ...
+
+- https://code.visualstudio.com/docs/languages/python
+- https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+</pre>
+
+<script>
+
+  window.onload = function() {
+
+    var rpl = /(?![^<]*>|[^<>]*<\/)((https?:)\/\/[a-z0-9&#=.\/\-?_]+)/gi;
+    var r = document.getElementById('content').innerHTML;
+    var subst = '<a href="$1" target="_blank">$1</a>'; 
+    var r = r.replace(rpl, subst);
+    document.getElementById('content').innerHTML = r;
+  }
+
+</script>

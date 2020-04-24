@@ -1,0 +1,41 @@
+<div id="content">
+  
+- https://wiki.python.org/moin/BeginnersGuide
+  - https://wiki.python.org/moin/BeginnersGuide/Examples
+- https://www.python.org/doc
+  - https://docs.python.org/3/tutorial/index.html
+  - https://docs.python.org/3
+  - https://docs.python.org/3/reference
+  - https://docs.python.org/3/library
+  - ...
+
+- https://code.visualstudio.com/docs/languages/python
+- https://marketplace.visualstudio.com/items?itemName=ms-python.python
+
+![img](.fl-attachments/download.jpg)
+
+</div>
+
+<style> #content { font: 15px sans-serif; } </style>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- <script src="md.js"></script> -->
+<script>
+
+  // alternative: https://github.com/markdown-it/markdown-it, ...
+  
+  var renderer = new marked.Renderer();
+  renderer.link = function(href, title, text) {
+    var link = marked.Renderer.prototype.link.call(this, href, title, text);
+    return link.replace("<a","<a target='_blank' ");
+  };
+
+  marked.setOptions({
+    renderer: renderer
+  });
+
+  window.onload = function() {
+    document.getElementById('content').innerHTML =
+      marked( document.getElementById('content').innerHTML );
+  }
+
+</script>
